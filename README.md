@@ -18,7 +18,7 @@ This method aims to find a function that is positive for regions with high densi
 
 * [Anomalize w/ STL and Twitter Decomposition](https://business-science.github.io/anomalize/index.html)
 
-The method utilizes time series decomposition. The measured value or the numerical value on which detection needs to be performed for a particular group is decomposed into four columns that are observed, season, trend, and remainder. The default method used for decomposition is STL, which is a seasonal decomposition utilizing a Loess smoother, and an alternative to it is Twitter. Twitter is identical to STL for removing the seasonal component. The difference is in removing the trend is that it uses piece-wise median of the data(one or several median split at specified intervals) rather than fitting a smoother. This method works well where seasonality dominates the trend in time series.
+The method utilizes time series decomposition. The measured value or the numerical value on which detection needs to be performed for a particular group is decomposed into four columns that are observed, season, trend, and remainder. The default method used for decomposition is `STL`, which is a seasonal decomposition utilizing a Loess smoother, and an alternative to it is `Twitter`. `Twitter` is identical to `STL` for removing the seasonal component. The difference is in removing the trend is that it uses piece-wise median of the data(one or several median split at specified intervals) rather than fitting a smoother. This method works well where seasonality dominates the trend in time series.
 
 ## Authors
 
