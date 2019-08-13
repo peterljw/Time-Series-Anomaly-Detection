@@ -1,12 +1,16 @@
 # Time-Series-Anomaly-Detection
 
- A demonstration of time-series anomaly detection utilizing various anomaly detection algorithms and packages such as RandomCutForest(AWS SageMaker), Isolation Forest, K-Means, One Class SVM, STL decomposition, etc with testing data from [The Numenta Anomaly Benchmark](https://github.com/numenta/NAB) dataset.
+ A demonstration of time-series anomaly detection utilizing various anomaly detection algorithms and packages such as RandomCutForest(AWS SageMaker), Isolation Forest, K-Means, One Class SVM, STL decomposition, etc with testing data from [The Numenta Anomaly Benchmark](https://github.com/numenta/NAB) dataset and self-generated synthetic data.
 
 ## Algorithms Overview
 
 * [RandomCutForest](https://docs.aws.amazon.com/sagemaker/latest/dg/randomcutforest.html)/[Isolation Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html)
 
 A tree ensemble method that aims to detect anomalies through data space partitioning. For example, a random sample of the input data is first determined. The random sample is then partitioned according to the number of trees in the forest. Each tree is given such a partition and organizes that subset of points into a k-d tree. The anomaly score assigned to a data point by the tree is defined as the expected change in complexity of the tree as a result adding that point to the tree; which, in approximation, is inversely proportional to the resulting depth of the point in the tree. Anomalies are then determined based on a desired level of threshold for anomaly score.
+
+* [DeepAR](https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html)
+
+The Amazon SageMaker DeepAR forecasting algorithm is a supervised learning algorithm for forecasting scalar (one-dimensional) time series using recurrent neural networks (RNN). During training, DeepAR accepts a training dataset and an optional test dataset. It uses the test dataset to evaluate the trained model. In general, the datasets don't have to contain the same set of time series. You can use a model trained on a given training set to generate forecasts for the future of the time series in the training set, and for other time series. Both the training and the test datasets consist of one or, preferably, more target time series. Each target time series can optionally be associated with a vector of feature time series and a vector of categorical features. Anomaly detection could be made by comparing actual values to predicted confidence intervals.
 
 * [K-Means](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
 
